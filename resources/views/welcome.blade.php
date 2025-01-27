@@ -154,6 +154,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<<<<<<< HEAD
     <script>
         // Script para mostrar la imagen en el modal
     document.addEventListener("DOMContentLoaded", function() {
@@ -198,6 +199,8 @@
                 alert("Error: " + error.message);
             });
         });
+=======
+>>>>>>> 031b740 (Nuevo commit)
     </script>
 </body>
 </html>
