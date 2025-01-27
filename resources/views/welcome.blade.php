@@ -156,23 +156,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Script para mostrar la imagen en el modal
-    document.addEventListener("DOMContentLoaded", function() {
-    var modal = document.getElementById('imageModal');
-    modal.addEventListener('show.bs.modal', function(event) {
-        var button = event.relatedTarget; // El botón que abrió el modal
-        var imgSrc = button.getAttribute('data-bs-img-src'); // Obtén la URL de la imagen
-
-        // Actualiza el src de la imagen en el modal
-        var modalImage = document.getElementById('modalImage');
-        modalImage.src = imgSrc;
-    });
-
-    // Cierra el modal y resetea la imagen cuando se cierra el modal
-    modal.addEventListener('hidden.bs.modal', function() {
-        var modalImage = document.getElementById('modalImage');
-        modalImage.src = ''; // Limpiar el src al cerrar el modal
-    });
-});
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById('imageModal');
+            modal.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var imgSrc = button.getAttribute('data-bs-img-src');
+                document.getElementById('modalImage').src = imgSrc;
+            });
+        });
 
         // Enviar el formulario de contacto por AJAX
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
