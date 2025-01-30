@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>CosicasEn3D - Bienvenid@</title>
 
     <!-- Favicon -->
@@ -12,31 +11,31 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" /> <!-- Fuente personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
-        /* Estilo global para asegurar que no haya scroll innecesario */
+        /* Estilo global */
         html, body {
-            height: 100%;  /* Esto asegura que la altura ocupe toda la ventana */
-            margin: 0;  /* Remueve los márgenes predeterminados */
-            overflow-x: hidden;  /* Evita el scroll horizontal */
-            box-sizing: border-box; /* Para que el padding y el border no aumenten el tamaño total de los elementos */
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            box-sizing: border-box;
         }
 
         body {
             background-color: #f8f9fa;
             font-family: 'Figtree', sans-serif;
-            margin-bottom: 0;  /* Eliminar margen en el fondo que podría causar scroll */
+            margin-bottom: 0;
         }
 
-        /* Hero Section con imagen de impresora 3D */
+        /* Hero Section */
         .hero-section {
             background: url('{{ asset('img/corazon.jpg') }}') no-repeat center center;
             background-size: cover;
-            height: 25vh; /* Reducido para que ocupe aún menos espacio */
+            height: 25vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -60,7 +59,7 @@
             font-size: 1.2rem;
         }
 
-        /* Sección de Proyectos dentro de una imagen */
+        /* Sección de Proyectos */
         .projects-section {
             background: url('{{ asset('img/fondo_proyectos.jpg') }}') no-repeat center center;
             background-size: cover;
@@ -71,32 +70,44 @@
         .projects-section h2 {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 10px;  /* Reducido el espacio inferior */
+            color: black; /* Título en negro */
         }
 
         /* Estilos para las imágenes de los proyectos */
         .project-card {
             background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 15px;
-            margin: 10px;
+            margin: 5px; /* Reducido el espacio entre las imágenes */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
         }
 
         .project-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 4px;
         }
 
-        /* Sección de Contacto */
+        /* Modal de imagen */
+        .modal img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* Formulario de Contacto */
         .contact-form-container {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            margin-top: 20px;
+            margin-top: 10px; /* Reducido el espacio superior */
         }
 
         .contact-form-container h2 {
@@ -144,16 +155,17 @@
 
         /* Footer */
         .footer {
-            background-color: #2c3e50;  /* Color oscuro */
+            background-color: #2c3e50;
             color: white;
-            padding: 18px 0;
+            padding: 2px 0; /* Reducido el espacio superior e inferior */
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1rem;
-            position: relative; /* Se asegura que el footer no cause desbordamiento */
+            position: relative;
             width: 100%;
-            margin-top: auto;  /* Asegura que el footer se quede abajo */
+            margin-top: auto;
+            border-top: 2px solid #bdc3c7; /* Borde superior delgado */
         }
 
         .footer .footer-left {
@@ -166,7 +178,7 @@
             color: #bdc3c7;
             opacity: 0.8;
             position: absolute;
-            right: 20px;
+            right: 15px;
         }
 
         .footer a {
@@ -197,17 +209,6 @@
             color: #fff;
         }
 
-        /* Footer-bottom fixes */
-        .footer-bottom {
-            background-color: #222;
-            color: #bdc3c7;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 1rem;
-            width: 100%;
-            margin-top: 0;
-            position: relative;
-        }
     </style>
 </head>
 <body>
@@ -246,25 +247,39 @@
         </div>
     </div>
 
-    <!-- Sección de Proyectos dentro de una imagen -->
+    <!-- Sección de Proyectos -->
     <div id="proyectos" class="projects-section">
-        <h2 style="color: black;">Nuestros Proyectos 3D</h2>
+        <h2>Nuestros Proyectos 3D</h2>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-3">
-                    <div class="project-card">
-                        <img src="img/img1.jpg" alt="Proyecto 1">
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img-src="{{ asset('img/img1.jpg') }}">
+                        <img src="{{ asset('img/img1.jpg') }}" alt="Proyecto 1">
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="project-card">
-                        <img src="img/img2.jpg" alt="Proyecto 2">
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img-src="{{ asset('img/img2.jpg') }}">
+                        <img src="{{ asset('img/img2.jpg') }}" alt="Proyecto 2">
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="project-card">
-                        <img src="img/img3.jpg" alt="Proyecto 3">
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img-src="{{ asset('img/img3.jpg') }}">
+                        <img src="{{ asset('img/img3.jpg') }}" alt="Proyecto 3">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ampliar la imagen -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Imagen ampliada">
                 </div>
             </div>
         </div>
@@ -296,11 +311,24 @@
             <p>&copy; 2024 CosicasEn3D. Todos los derechos reservados.</p>
         </div>
         <div class="footer-right">
-            <p>¡Hecho por Daniel Pérez Grao!</p>
+            <p>¡Hecho por <a href="https://linkedin.com/in/daniperezgr/">Daniel Pérez Grao!</a></p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Cuando se hace clic en una imagen
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+
+        modal.addEventListener('show.bs.modal', function (event) {
+            const trigger = event.relatedTarget;
+            const imageSrc = trigger.getAttribute('data-bs-img-src');
+            modalImage.src = imageSrc;
+        });
+    </script>
 </body>
 </html>
+
