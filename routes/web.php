@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/contact', [ContactController::class, 'showForm']);
+Route::post('/contact', [ContactController::class, 'sendEmail'])->name('send.email');
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +37,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/inicio', [AdminController::class, 'index'])->name('admin.index');
 
 require __DIR__.'/auth.php';
+
+Route::get('/inicio', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/dashboard', [ContactFormController::class, 'submit'])->name('contact.submit');

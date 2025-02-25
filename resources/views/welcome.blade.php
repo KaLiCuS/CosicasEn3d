@@ -16,6 +16,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Font Awesome (para los íconos de redes sociales) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
     <style>
         /* Estilo global */
         html, body {
@@ -209,6 +212,86 @@
             color: #fff;
         }
 
+        /* Estilo para los botones circulares */
+        .btn-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        .btn-circle-facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .btn-circle-facebook:hover {
+            background-color: #2d4373;
+        }
+
+        .btn-circle-instagram {
+            background-color: #E1306C;
+            color: white;
+        }
+
+        .btn-circle-instagram:hover {
+            background-color: #C13584;
+        }
+
+        /* Estilo para los botones rectangulares de login y registro */
+        .btn-rectangular {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .btn-rectangular-login {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-rectangular-login:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-rectangular-register {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-rectangular-register:hover {
+            background-color: #218838;
+        }
+
+        /* Estilo para el modo nocturno */
+        body.night-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        body.night-mode .navbar {
+            background-color: #444;
+        }
+
+        body.night-mode .footer {
+            background-color: #444;
+        }
+
+        body.night-mode .contact-form-container {
+            background-color: #555;
+        }
+
+        body.night-mode .btn-custom {
+            background-color: #006064;
+        }
+
     </style>
 </head>
 <body>
@@ -222,18 +305,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    @if (Route::has('login'))
-                        <li class="nav-item">
+                    <!-- Redes sociales -->
+                    <li class="nav-item ms-3">
+                        <a href="https://www.facebook.com/CosicasEn3D" target="_blank" class="btn btn-circle-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="https://www.instagram.com/CosicasEn3d" target="_blank" class="btn btn-circle-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <!-- Botones de Iniciar sesión, Registrarse y Modo Nocturno -->
+                    <li class="nav-item ms-3">
+                        <button id="darkModeToggle" class="btn btn-circle" title="Modo Nocturno">
+                            🌙
+                        </button>
+                    </li>
+                    <li class="nav-item ms-3">
+                        @if (Route::has('login'))
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Dashboard</a>
                             @else
-                                <a href="{{ route('login') }}" class="btn btn-outline-success">Iniciar sesión</a>
+                                <a href="{{ route('login') }}" class="btn btn-rectangular-login ms-2">Iniciar sesión</a>
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="btn btn-outline-info ml-4">Registrarse</a>
+                                    <a href="{{ route('register') }}" class="btn btn-rectangular-register ms-2">Registrarse</a>
                                 @endif
                             @endauth
-                        </li>
-                    @endif
+                        @endif
+                    </li>
                 </ul>
             </div>
         </div>
@@ -286,24 +386,29 @@
     </div>
 
     <!-- Formulario de Contacto -->
-    <div id="contacto" class="container contact-form-container">
-        <h2>Contacto y sugerencias</h2>
-        <form class="contact-form">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Mensaje:</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-custom">Enviar</button>
-        </form>
-    </div>
+    <form action="{{ route('contact.blade') }}" method="POST">
+        @csrf
+        <!-- Campo de Nombre -->
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+    
+        <!-- Campo de Correo -->
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+    
+        <!-- Campo de Mensaje -->
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" class="form-control" rows="4" required></textarea>
+        </div>
+    
+        <!-- Botón Enviar -->
+        <button type="submit" class="btn btn-custom">Enviar</button>
+    </form>
 
     <!-- Footer -->
     <footer class="footer">
@@ -315,20 +420,28 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+<!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Cuando se hace clic en una imagen
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
+        // Función para alternar el modo nocturno
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+            // Cambiar el ícono del botón dependiendo del modo
+            const button = document.getElementById('darkModeToggle');
+            if (document.body.classList.contains('night-mode')) {
+                button.innerHTML = '🌞';  // Cambiar a sol cuando está en modo nocturno
+            } else {
+                button.innerHTML = '🌙';  // Cambiar a luna cuando está en modo claro
+            }
+        });
 
+        // Modal de imagen
+        const modal = document.getElementById('imageModal');
         modal.addEventListener('show.bs.modal', function (event) {
-            const trigger = event.relatedTarget;
-            const imageSrc = trigger.getAttribute('data-bs-img-src');
-            modalImage.src = imageSrc;
+            const imgSrc = event.relatedTarget.getAttribute('data-bs-img-src');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imgSrc;
         });
     </script>
 </body>
 </html>
-

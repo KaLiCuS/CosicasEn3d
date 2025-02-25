@@ -319,6 +319,11 @@ return [
 
         ['header' => 'PANEL'],
         [
+
+            'text' => 'Editar Pérfil',
+            'url'  => 'profile.edit',
+            'icon' => 'fas fa-fw fa-user',
+
             'text' => 'Pérfil',
             'url'  => '',
             'icon' => 'fas fa-fw fa-user',
