@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
-    // Mostrar el formulario
     public function showForm()
     {
         return view('contact');
     }
 
-    // Enviar el correo
-    public function sendEmail(Request $request)
+    public function sendMail(Request $request)
     {
         // Validar los datos del formulario
         $validated = $request->validate([
@@ -25,9 +23,9 @@ class ContactController extends Controller
         ]);
 
         // Enviar el correo
-        Mail::to('cosicasen3d@gmail.com')->send(new ContactMail($validated));
+        Mail::to('admin@example.com')->send(new ContactFormMail($validated['name'], $validated['email'], $validated['message']));
 
-        // Redirigir con mensaje de éxito
-        return redirect()->back()->with('success', 'Correo enviado exitosamente!');
+        // Redirigir con un mensaje de éxito
+        return back()->with('success', 'Tu mensaje ha sido enviado correctamente.');
     }
 }

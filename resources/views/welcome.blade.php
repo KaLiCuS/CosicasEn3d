@@ -233,7 +233,14 @@
         .btn-circle-facebook:hover {
             background-color: #2d4373;
         }
+        .btn-circle-twitter {
+            background-color: #1DA1F2;
+            color: white;
+        }
 
+        .btn-circle-twitter:hover {
+            background-color: #0d95e8;
+        }
         .btn-circle-instagram {
             background-color: #E1306C;
             color: white;
@@ -306,6 +313,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <!-- Redes sociales -->
+                    <li class="nav-item ms-3">
+                        <a href="https://www.twitter.com/CosicasEn3D" target="_blank" class="btn btn-circle-twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
                     <li class="nav-item ms-3">
                         <a href="https://www.facebook.com/CosicasEn3D" target="_blank" class="btn btn-circle-facebook">
                             <i class="fab fa-facebook-f"></i>
@@ -385,30 +397,50 @@
         </div>
     </div>
 
-    <!-- Formulario de Contacto -->
-    <form action="{{ route('contact.blade') }}" method="POST">
-        @csrf
-        <!-- Campo de Nombre -->
-        <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" class="form-control" required>
-        </div>
+    <div id="contacto" class="container contact-form-container">
+        <h2>Contacto y sugerencias</h2>
     
-        <!-- Campo de Correo -->
-        <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" name="email" id="email" class="form-control" required>
-        </div>
+        <!-- Mostramos mensaje de éxito o error -->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @elseif (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
     
-        <!-- Campo de Mensaje -->
-        <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea name="message" id="message" class="form-control" rows="4" required></textarea>
-        </div>
+        <form action="{{ route('contact.send') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                @error('name')
+                    <div style="color: red;" class="mt-2">{{ $message }}</div>
+                @enderror
+            </div>
     
-        <!-- Botón Enviar -->
-        <button type="submit" class="btn btn-custom">Enviar</button>
-    </form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                @error('email')
+                    <div style="color: red;" class="mt-2">{{ $message }}</div>
+                @enderror
+            </div>
+    
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
+                @error('message')
+                    <div style="color: red;" class="mt-2">{{ $message }}</div>
+                @enderror
+            </div>
+    
+            <button type="submit" class="btn btn-custom">Enviar</button>
+        </form>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
