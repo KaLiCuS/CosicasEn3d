@@ -23,7 +23,7 @@ class ContactController extends Controller
         ]);
 
         // Enviar el correo
-        Mail::to('admin@example.com')->send(new ContactFormMail($validated['name'], $validated['email'], $validated['message']));
+        Mail::to('cosicasen3d@gmail.com')->send(new ContactFormMail($validated['name'], $validated['email'], $validated['message']));
 
         // Redirigir con un mensaje de éxito
         return back()->with('success', 'Tu mensaje ha sido enviado correctamente.');

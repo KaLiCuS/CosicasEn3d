@@ -397,49 +397,24 @@
         </div>
     </div>
 
-    <div id="contacto" class="container contact-form-container">
-        <h2>Contacto y sugerencias</h2>
-    
-        <!-- Mostramos mensaje de éxito o error -->
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @elseif (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-    
-        <form action="{{ route('contact.send') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-                <label for="name" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
-                @error('name')
-                    <div style="color: red;" class="mt-2">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
-                @error('email')
-                    <div style="color: red;" class="mt-2">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <div class="mb-3">
-                <label for="message" class="form-label">Mensaje:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-                @error('message')
-                    <div style="color: red;" class="mt-2">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <button type="submit" class="btn btn-custom">Enviar</button>
-        </form>
-    </div>
+<!-- Formulario de Contacto -->
+<div id="contacto" class="container contact-form-container">
+    <h2>Contacto y sugerencias</h2>
+    <form class="contact-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico:</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensaje:</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom">Enviar</button>
+    </form>
 </div>
 
     <!-- Footer -->
