@@ -17,6 +17,27 @@
             <p>Arrastra y suelta tus diseños aquí</p>
         </div>
     </div>
+
+    <!-- Carrito de Compras -->
+    <div id="cart" class="mt-5">
+        <h3>Carrito de Compras</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Archivo</th>
+                    <th>Cantidad</th>
+                    <th>Personalizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <div class="d-flex justify-content-end">
+            <button id="cancel-order" class="btn btn-danger mr-2">Cancelar Pedido</button>
+            <button id="confirm-order" class="btn btn-success">Aceptar Pedido</button>
+        </div>
+    </div>
 @stop
 
 @section('css')
@@ -28,6 +49,12 @@
         // Manejo de la zona de arrastre
         const dropArea = document.getElementById('drop-area');
         const fileInput = document.getElementById('file-upload');
+        const cartItems = document.getElementById('cart-items');
+
+        // Tipos de archivo permitidos para impresión 3D
+        const validExtensions = ['.stl', '.obj', '.gcode'];
+
+        let cart = [];
 
         // Cuando el archivo se suelta en el área
         dropArea.addEventListener('drop', function(event) {
@@ -49,11 +76,87 @@
 
         // Función para manejar los archivos
         function handleFiles(files) {
-            if (files.length > 0) {
-                // Aquí puedes agregar la lógica para mostrar los archivos seleccionados o subirlos al servidor
-                console.log(files);
+            const file = files[0];
+            if (file) {
+                const fileExtension = file.name.split('.').pop().toLowerCase();
+                if (validExtensions.includes('.' + fileExtension)) {
+                    // Verificar si el archivo ya está en el carrito
+                    const existingItem = cart.find(item => item.name === file.name);
+                    if (!existingItem) {
+                        // Agregar archivo al carrito
+                        const newItem = {
+                            name: file.name,
+                            quantity: 1,
+                            customize: false
+                        };
+                        cart.push(newItem);
+                        updateCart();
+                    } else {
+                        alert('Este archivo ya ha sido agregado al carrito.');
+                    }
+                } else {
+                    alert('Por favor, selecciona un archivo válido para impresión 3D (stl, obj, gcode).');
+                }
             }
         }
+
+        // Actualizar el carrito de compras
+        function updateCart() {
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>
+                        <input type="number" value="${item.quantity}" min="1" class="form-control" onchange="updateQuantity(${index}, this.value)">
+                    </td>
+                    <td>
+                        <select class="form-control" onchange="updateCustomization(${index}, this.value)">
+                            <option value="false" ${!item.customize ? 'selected' : ''}>No</option>
+                            <option value="true" ${item.customize ? 'selected' : ''}>Sí</option>
+                        </select>
+                    </td>
+                    <td><button class="btn btn-danger" onclick="removeItem(${index})">Eliminar</button></td>
+                `;
+                cartItems.appendChild(row);
+            });
+        }
+
+        // Actualizar la cantidad de un item
+        function updateQuantity(index, quantity) {
+            cart[index].quantity = parseInt(quantity);
+        }
+
+        // Actualizar la opción de personalización
+        function updateCustomization(index, value) {
+            cart[index].customize = (value === 'true');
+        }
+
+        // Eliminar un item del carrito
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Aceptar el pedido
+        document.getElementById('confirm-order').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('No has añadido ningún archivo al carrito.');
+            } else {
+                // Aquí podrías enviar el carrito al servidor para procesar el pedido
+                console.log('Pedido confirmado:', cart);
+                alert('Pedido confirmado');
+                cart = [];
+                updateCart();
+            }
+        });
+
+        // Cancelar el pedido
+        document.getElementById('cancel-order').addEventListener('click', function() {
+            cart = [];
+            updateCart();
+            alert('Pedido cancelado');
+        });
 
         // Abrir el selector de archivos al hacer clic en el área
         dropArea.addEventListener('click', function() {
