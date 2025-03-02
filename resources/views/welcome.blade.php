@@ -233,13 +233,13 @@
         .btn-circle-facebook:hover {
             background-color: #2d4373;
         }
-        .btn-circle-twitter {
-            background-color: #1DA1F2;
+        .btn-circle-x {
+            background-color: #000000; /* Color de fondo para el ícono de X */
             color: white;
         }
 
-        .btn-circle-twitter:hover {
-            background-color: #0d95e8;
+        .btn-circle-x:hover {
+            background-color: #333333; /* Color al pasar el ratón */
         }
         .btn-circle-instagram {
             background-color: #E1306C;
@@ -314,8 +314,8 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Redes sociales -->
                     <li class="nav-item ms-3">
-                        <a href="https://www.twitter.com/CosicasEn3D" target="_blank" class="btn btn-circle-twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.x.com/CosicasEn3D" target="_blank" class="btn btn-circle-x">
+                            <i class="fab fa-x"></i>  <!-- Este es el ícono de "X" si está disponible en Font Awesome -->
                         </a>
                     </li>
                     <li class="nav-item ms-3">
@@ -397,25 +397,25 @@
         </div>
     </div>
 
-<!-- Formulario de Contacto -->
-<div id="contacto" class="container contact-form-container">
-    <h2>Contacto y sugerencias</h2>
-    <form class="contact-form">
-        <div class="mb-3">
-            <label for="name" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico:</label>
-            <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Mensaje:</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-custom">Enviar</button>
-    </form>
-</div>
+    <!-- Formulario de Contacto -->
+    <div id="contacto" class="container contact-form-container">
+        <h2>Contacto y sugerencias</h2>
+        <form class="contact-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje:</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Enviar</button>
+        </form>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -427,7 +427,7 @@
         </div>
     </footer>
 
-<!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Función para alternar el modo nocturno
@@ -436,19 +436,22 @@
             // Cambiar el ícono del botón dependiendo del modo
             const button = document.getElementById('darkModeToggle');
             if (document.body.classList.contains('night-mode')) {
-                button.innerHTML = '🌞';  // Cambiar a sol cuando está en modo nocturno
+                button.innerHTML = '🌞';  // Sol (modo día)
             } else {
-                button.innerHTML = '🌙';  // Cambiar a luna cuando está en modo claro
+                button.innerHTML = '🌙';  // Luna (modo noche)
             }
         });
 
-        // Modal de imagen
-        const modal = document.getElementById('imageModal');
-        modal.addEventListener('show.bs.modal', function (event) {
-            const imgSrc = event.relatedTarget.getAttribute('data-bs-img-src');
-            const modalImage = document.getElementById('modalImage');
-            modalImage.src = imgSrc;
+        // Mostrar la imagen ampliada en el modal
+        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const imgSrc = card.getAttribute('data-bs-img-src');
+                document.getElementById('modalImage').src = imgSrc;
+                modal.show();
+            });
         });
     </script>
+
 </body>
 </html>
