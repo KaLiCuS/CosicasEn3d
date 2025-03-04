@@ -44,3 +44,19 @@ Route::get('/inicio', function () {
 
 Route::get('/contact', [ContactController::class, 'showForm']);
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.send');
+
+Route::get('/quienes-somos', function () {
+    return view('quienes-somos');
+})->name('quienes-somos');
+
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
+Route::get('ubicacion', function () {
+    return view('ubicacion');
+});
+
+Route::get('blog', function () {
+    return view('blog');
+});

@@ -312,6 +312,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!-- Nueva sección de botones en el menú -->
+                    <li class="nav-item ms-3">
+                        <a href="{{ url('/welcome') }}" class="nav-link">INICIO</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a href="{{ url('/quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a href="{{ url('/ubicacion') }}" class="nav-link">UBICACIÓN</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a href="{{ url('/blog') }}" class="nav-link">BLOG</a>
+                    </li>
+                    
                     <!-- Redes sociales -->
                     <li class="nav-item ms-3">
                         <a href="https://www.x.com/CosicasEn3D" target="_blank" class="btn btn-circle-x">
@@ -420,12 +434,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-left">
-            <p>&copy; 2024 CosicasEn3D. Todos los derechos reservados.</p>
+            <p>&copy; <span id="currentYear"></span> CosicasEn3D. Todos los derechos reservados.</p>
         </div>
         <div class="footer-right">
             <p>¡Hecho por <a href="https://linkedin.com/in/daniperezgr/">Daniel Pérez Grao!</a></p>
         </div>
     </footer>
+
+    <script>
+        // Obtener el año actual
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
