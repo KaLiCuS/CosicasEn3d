@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +59,5 @@ Route::get('ubicacion', function () {
 Route::get('blog', function () {
     return view('blog');
 });
+
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

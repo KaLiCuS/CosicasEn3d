@@ -38,7 +38,7 @@
         .hero-section {
             background: url('{{ asset('img/corazon.jpg') }}') no-repeat center center;
             background-size: cover;
-            height: 50vh;
+            height: 25vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,11 +50,10 @@
 
         .hero-text {
             text-align: center;
-            max-width: 600px;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -63,24 +62,105 @@
             font-size: 1.2rem;
         }
 
-        /* Sección de Ubicación */
-        .location-section {
-            padding: 50px 20px;
-            background-color: #ffffff;
+        /* Sección de Proyectos */
+        .projects-section {
+            background: url('{{ asset('img/fondo_proyectos.jpg') }}') no-repeat center center;
+            background-size: cover;
+            padding: 30px 0;
+            color: white;
         }
 
-        .location-section h2 {
+        .projects-section h2 {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: black;
+            margin-bottom: 10px;  /* Reducido el espacio inferior */
+            color: black; /* Título en negro */
         }
 
-        /* Estilo del Footer */
+        /* Estilos para las imágenes de los proyectos */
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            padding: 15px;
+            margin: 5px; /* Reducido el espacio entre las imágenes */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Modal de imagen */
+        .modal img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* Formulario de Contacto */
+        .contact-form-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 10px; /* Reducido el espacio superior */
+        }
+
+        .contact-form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .contact-form label {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .contact-form .form-control {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .contact-form textarea {
+            resize: none;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-custom {
+            background-color: #00BCD4;
+            color: white;
+            border: none;
+            font-weight: 500;
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: #0097A7;
+            color: white;
+        }
+
+        /* Footer */
         .footer {
             background-color: #2c3e50;
             color: white;
-            padding: 2px 0;
+            padding: 2px 0; /* Reducido el espacio superior e inferior */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -88,7 +168,7 @@
             position: relative;
             width: 100%;
             margin-top: auto;
-            border-top: 2px solid #bdc3c7;
+            border-top: 2px solid #bdc3c7; /* Borde superior delgado */
         }
 
         .footer .footer-left {
@@ -113,7 +193,7 @@
             text-decoration: underline;
         }
 
-        /* Navbar */
+        /* Nav bar style */
         .navbar {
             background-color: #222;
         }
@@ -132,23 +212,93 @@
             color: #fff;
         }
 
-        .social-icons a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 10px;
+        /* Estilo para los botones circulares */
+        .btn-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
         }
 
-        .social-icons a:hover {
-            color: #f39c12;
+        .btn-circle-facebook {
+            background-color: #3b5998;
+            color: white;
         }
 
-        /* Imagen 3D pequeña */
-        .about-us-section img {
-            max-width: 60%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .btn-circle-facebook:hover {
+            background-color: #2d4373;
         }
+        .btn-circle-x {
+            background-color: #000000; /* Color de fondo para el ícono de X */
+            color: white;
+        }
+
+        .btn-circle-x:hover {
+            background-color: #333333; /* Color al pasar el ratón */
+        }
+        .btn-circle-instagram {
+            background-color: #E1306C;
+            color: white;
+        }
+
+        .btn-circle-instagram:hover {
+            background-color: #C13584;
+        }
+
+        /* Estilo para los botones rectangulares de login y registro */
+        .btn-rectangular {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .btn-rectangular-login {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-rectangular-login:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-rectangular-register {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-rectangular-register:hover {
+            background-color: #218838;
+        }
+
+        /* Estilo para el modo nocturno */
+        body.night-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        body.night-mode .navbar {
+            background-color: #444;
+        }
+
+        body.night-mode .footer {
+            background-color: #444;
+        }
+
+        body.night-mode .contact-form-container {
+            background-color: #555;
+        }
+
+        body.night-mode .btn-custom {
+            background-color: #006064;
+        }
+
     </style>
 </head>
 <body>
@@ -162,6 +312,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!-- Nueva sección de botones en el menú -->
                     <li class="nav-item ms-3">
                         <a href="{{ url('/welcome') }}" class="nav-link">INICIO</a>
                     </li>
@@ -172,19 +323,44 @@
                         <a href="{{ url('/ubicacion') }}" class="nav-link">UBICACIÓN</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="#blog" class="nav-link">BLOG</a>
+                        <a href="{{ url('/blog') }}" class="nav-link">BLOG</a>
+                    </li>
+                    
+                    <!-- Redes sociales -->
+                    <li class="nav-item ms-3">
+                        <a href="https://www.x.com/CosicasEn3D" target="_blank" class="btn btn-circle-x">
+                            <i class="fab fa-x"></i>  <!-- Este es el ícono de "X" si está disponible en Font Awesome -->
+                        </a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/login') }}" class="btn btn-outline-light">Iniciar Sesión</a>
+                        <a href="https://www.facebook.com/CosicasEn3D" target="_blank" class="btn btn-circle-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="https://www.instagram.com/CosicasEn3d" target="_blank" class="btn btn-circle-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <!-- Botones de Iniciar sesión, Registrarse y Modo Nocturno -->
+                    <li class="nav-item ms-3">
+                        <button id="darkModeToggle" class="btn btn-circle" title="Modo Nocturno">
+                            🌙
+                        </button>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/register') }}" class="btn btn-outline-light">Registrarse</a>
+                        @if (Route::has('login'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-rectangular-login ms-2">Iniciar sesión</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="btn btn-rectangular-register ms-2">Registrarse</a>
+                                @endif
+                            @endauth
+                        @endif
                     </li>
                 </ul>
-                <div class="social-icons ms-auto">
-                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                </div>
             </div>
         </div>
     </nav>
@@ -199,12 +375,10 @@
 
     <!-- Sección de Ubicación con Google Maps -->
     <div class="location-section">
-        <h2>¿Dónde nos encontramos?</h2>
+        <h2 aling ="center">¿Dónde nos encontramos?</h2>
         <!-- Google Maps Embed -->
         <div class="text-center">
-            <iframe 
-                src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Plaza+del+Pilar,+Zaragoza,+España" 
-                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23872.80019719264!2d-0.9618812400330667!3d41.58871881071438!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914dd5e618e91%3A0x49df13f1158489a8!2sZaragoza!5e0!3m2!1ses!2ses!4v1741170493103!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
@@ -220,6 +394,28 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+        // Función para alternar el modo nocturno
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+            // Cambiar el ícono del botón dependiendo del modo
+            const button = document.getElementById('darkModeToggle');
+            if (document.body.classList.contains('night-mode')) {
+                button.innerHTML = '🌞';  // Sol (modo día)
+            } else {
+                button.innerHTML = '🌙';  // Luna (modo noche)
+            }
+        });
 
+        // Mostrar la imagen ampliada en el modal
+        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const imgSrc = card.getAttribute('data-bs-img-src');
+                document.getElementById('modalImage').src = imgSrc;
+                modal.show();
+            });
+        });
+    </script>
 </body>
 </html>

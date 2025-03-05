@@ -14,7 +14,6 @@ class ContactFormMail extends Mailable
     public $email;
     public $message;
 
-    // Constructor para pasar datos al correo
     public function __construct($name, $email, $message)
     {
         $this->name = $name;
@@ -22,10 +21,14 @@ class ContactFormMail extends Mailable
         $this->message = $message;
     }
 
-    // Configuración del correo
     public function build()
     {
         return $this->subject('Nuevo mensaje de contacto')
-                    ->view('emails.contact');
+                    ->view('emails.contact')
+                    ->with([
+                        'name' => $this->name,
+                        'email' => $this->email,
+                        'message' => $this->message,
+                    ]);
     }
 }
