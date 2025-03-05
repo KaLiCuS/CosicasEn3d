@@ -163,16 +163,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/welcome') }}" class="nav-link">INICIO</a>
+                        <a href="{{ url('/welcome.blade.php') }}" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
+                        <a href="{{ url('/quienes-somos.blade.php') }}" class="nav-link">QUIENES SOMOS</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/ubicacion') }}" class="nav-link">UBICACIÓN</a>
+                        <a href="{{ url('/ubicacion.blade.php') }}" class="nav-link">UBICACIÓN</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="#blog" class="nav-link">BLOG</a>
+                        <a href="{{ url('/blog.blade.php') }}" class="nav-link">BLOG</a>
                     </li>
                     <li class="nav-item ms-3">
                         <a href="{{ url('/login') }}" class="btn btn-outline-light">Iniciar Sesión</a>
