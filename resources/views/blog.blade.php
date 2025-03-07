@@ -368,26 +368,139 @@
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-text">
-            <h1>Ubicación</h1>
-            <p>Encuentra nuestra oficina en Zaragoza, España.</p>
+            <h1>Blog</h1>
+            <p>Encuentra los artículos más interesantes</p>
         </div>
     </div>
 
-    <!-- Sección de Ubicación con Google Maps -->
-    <div class="location-section">
-        <h2>¿Dónde nos encontramos?</h2>
-        <!-- Google Maps Embed -->
-        <div class="text-center">
-            <iframe 
-                src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Plaza+del+Pilar,+Zaragoza,+España" 
-                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<!-- Sección de Blog -->
+<div class="blog-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Últimas Publicaciones</h2>
+
+        <div class="row">
+
+            <!-- Entrada de Blog 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 1</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el primer artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 2</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el segundo artículo. De nuevo, aquí se puede hablar sobre lo que se verá en el post completo.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 3</a></h5>
+                        <p class="card-text">Aquí tienes el resumen de un tercer artículo. Puedes poner algo interesante sobre el tema tratado en el blog.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 4">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 4</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el cuarto artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 5">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 5</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el quinto artículo. De nuevo, aquí se puede hablar sobre lo que se verá en el post completo.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 6">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 6</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el sexto artículo. Puedes poner algo interesante sobre el tema tratado en el blog.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 7">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 7</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el séptimo artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 8</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el octavo artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrada de Blog 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/css/img1.jpg" class="card-img-top" alt="Blog 9">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 9</a></h5>
+                        <p class="card-text">Resumen breve sobre lo que trata el noveno artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Enlace a la página de todos los blogs -->
+        <div class="text-center mt-5">
+            <a href="/todos-los-articulos" class="btn btn-outline-primary">Ver todos los artículos</a>
         </div>
     </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-left">
-            <p>&copy; 2024 CosicasEn3D. Todos los derechos reservados.</p>
+            <p>&copy; <span id="currentYear"></span> CosicasEn3D. Todos los derechos reservados.</p>
         </div>
         <div class="footer-right">
             <p>¡Hecho por <a href="https://linkedin.com/in/daniperezgr/">Daniel Pérez Grao!</a></p>
@@ -418,6 +531,10 @@
                 modal.show();
             });
         });
+    </script>
+    <script>
+        // Obtener el año actual
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

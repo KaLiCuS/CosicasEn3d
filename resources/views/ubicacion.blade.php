@@ -314,16 +314,16 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Nueva sección de botones en el menú -->
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/welcome') }}" class="nav-link">INICIO</a>
+                        <a href="{{ url('welcome') }}" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
+                        <a href="{{ url('quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/ubicacion') }}" class="nav-link">UBICACIÓN</a>
+                        <a href="{{ url('ubicacion') }}" class="nav-link">UBICACIÓN</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/blog') }}" class="nav-link">BLOG</a>
+                        <a href="{{ url('blog') }}" class="nav-link">BLOG</a>
                     </li>
                     
                     <!-- Redes sociales -->
@@ -351,7 +351,7 @@
                     <li class="nav-item ms-3">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Dashboard</a>
+                                <a href="{{ url('dashboard') }}" class="btn btn-outline-light">Dashboard</a>
                             @else
                                 <a href="{{ route('login') }}" class="btn btn-rectangular-login ms-2">Iniciar sesión</a>
                                 @if (Route::has('register'))
@@ -373,19 +373,44 @@
         </div>
     </div>
 
-    <!-- Sección de Ubicación con Google Maps -->
-    <div class="location-section">
-        <h2 aling ="center">¿Dónde nos encontramos?</h2>
-        <!-- Google Maps Embed -->
-        <div class="text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23872.80019719264!2d-0.9618812400330667!3d41.58871881071438!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914dd5e618e91%3A0x49df13f1158489a8!2sZaragoza!5e0!3m2!1ses!2ses!4v1741170493103!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- Sección de Ubicación con Google Maps -->
+<div class="location-section" style="text-align: center;">
+    <h2 style="text-align: center;">¿Dónde nos encontramos?</h2>
+    
+    <!-- Google Maps Embed (Aumentamos el tamaño) -->
+    <div class="text-center" style="margin-bottom: 5px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23872.80019719264!2d-0.9618812400330667!3d41.58871881071438!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914dd5e618e91%3A0x49df13f1158489a8!2sZaragoza!5e0!3m2!1ses!2ses!4v1741170493103!5m2!1ses!2ses" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Información de contacto -->
+    <div class="contact-info" style="text-align: center;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Datos de Contacto</h3>
+        <p style="font-size: 1.0rem;"><strong>Dirección:</strong> Calle Ficticia 123, Zaragoza, España</p>
+        <p style="font-size: 1.0rem;"><strong>Teléfono:</strong> +34 912 345 678</p>
+        <p style="font-size: 1.0rem;"><strong>Email:</strong> contacto@cosicasen3d.com</p>
+        <p style="font-size: 1.0rem;"><strong>Horario de atención:</strong> Lunes a Viernes, de 9:00 a 18:00</p>
+        
+        <!-- Datos adicionales de contacto -->
+        <p style="font-size: 1.6rem;"><strong>Síguenos en redes sociales:</strong></p>
+        <div>
+            <a href="https://www.facebook.com/CosicasEn3D" target="_blank" style="font-size: 1.5rem; color: #3b5998; margin-right: 15px;">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/CosicasEn3d" target="_blank" style="font-size: 1.5rem; color: #E1306C; margin-right: 15px;">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://twitter.com/CosicasEn3D" target="_blank" style="font-size: 1.5rem; color: #1DA1F2;">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
         </div>
     </div>
+</div>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-left">
-            <p>&copy; 2024 CosicasEn3D. Todos los derechos reservados.</p>
+            <p>&copy; <span id="currentYear"></span> CosicasEn3D. Todos los derechos reservados.</p>
         </div>
         <div class="footer-right">
             <p>¡Hecho por <a href="https://linkedin.com/in/daniperezgr/">Daniel Pérez Grao!</a></p>
@@ -417,5 +442,10 @@
             });
         });
     </script>
+
+    <script>
+    // Obtener el año actual
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

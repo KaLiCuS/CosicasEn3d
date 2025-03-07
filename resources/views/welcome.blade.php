@@ -351,7 +351,7 @@
                     <li class="nav-item ms-3">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Dashboard</a>
+                                <a href="{{ url('dashboard') }}" class="btn btn-outline-light">Dashboard</a>
                             @else
                                 <a href="{{ route('login') }}" class="btn btn-rectangular-login ms-2">Iniciar sesión</a>
                                 @if (Route::has('register'))
@@ -412,24 +412,25 @@
     </div>
 
     <!-- Formulario de Contacto -->
-    <div id="contacto" class="container contact-form-container">
-        <h2>Contacto y sugerencias</h2>
-        <form class="contact-form">
+    <form action="{{ route('contact.send') }}" method="POST" class="contact-form">
+        @csrf
+        <div id="contacto" class="container contact-form-container">
+            <h2>Contacto y sugerencias</h2>
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" required />
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" required />
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Mensaje:</label>
                 <textarea class="form-control" id="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-custom">Enviar</button>
-        </form>
-    </div>
+        </div>
+    </form>
 
     <!-- Footer -->
     <footer class="footer">

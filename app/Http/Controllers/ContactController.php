@@ -15,6 +15,7 @@ class ContactController extends Controller
 
     public function sendMail(Request $request)
     {
+        //var_dump($_POST); die();
         // Validar los datos del formulario
         $validated = $request->validate([
             'name' => 'required|string|max:255',

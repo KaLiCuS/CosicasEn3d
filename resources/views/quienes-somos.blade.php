@@ -375,23 +375,30 @@
 
     <!-- Sección de Quiénes Somos -->
     <div class="about-us-section">
-        <h2>Nuestra Historia</h2>
-        <p>
+        <h2 class="text-center">Nuestra Historia</h2>
+        <p class="text-center">
             En CosicasEn3D nos apasiona transformar ideas en impresionantes modelos tridimensionales. Comenzamos como un pequeño grupo de creativos, pero nuestra pasión por la innovación y el diseño nos ha llevado a crecer y ofrecer soluciones 3D de alta calidad. 
-            Nuestra misión es ayudar a nuestros clientes a visualizar sus ideas de manera única, innovadora y profesional, proporcionando modelos 3D detallados y realistas que aportan valor y creatividad.
-        </p>
-
-        <p>
+            Nuestra misión es ayudar a nuestros clientes a visualizar sus ideas de manera única, innovadora y profesional, proporcionando modelos 3D detallados y realistas que aportan valor y creatividad.    
+        <p class="text-center">
             Nuestro equipo está compuesto por diseñadores, ingenieros y artistas apasionados por las posibilidades ilimitadas que ofrece el diseño 3D. Trabajamos de manera colaborativa para garantizar que cada proyecto sea una obra maestra, con una atención al detalle impecable y un enfoque centrado en el cliente.
         </p>
-
-        <p>
+    
+        <p class="text-center">
             En un futuro, nos gustaría seguir innovando y ofrecer personalizaciones a medida, pintadas a mano, que añadan un toque único y exclusivo a cada proyecto. Creemos que esto permitirá a nuestros clientes tener un producto verdaderamente personalizado que refleje su estilo.
-        </p><br>
-
+        </p>
+        <p class="text-center">
+            Además, nos estamos preparando para expandir nuestra oferta de servicios, explorando nuevas tecnologías como la impresión 3D y la realidad aumentada, lo que permitirá una interacción más profunda con nuestros modelos. Estamos comprometidos con la excelencia y la innovación constante, para poder ofrecer a nuestros clientes experiencias cada vez más enriquecedoras.
+        </p>
+        <p class="text-center">
+            En CosicasEn3D, cada proyecto es una oportunidad para desafiar los límites de la creatividad y ofrecer algo realmente único. Estamos emocionados de lo que el futuro nos depara y de poder seguir sorprendiendo a nuestros clientes con nuestras soluciones 3D.
+        </p>
+        <p class="text-center">
+            Agradecemos que cualquier cosa nos la hagais llegar en nuestro formulario de contacto.
+        </p>
+    </div>
         <!-- Imagen 3D -->
         <div class="text-center">
-            <img src="{{ asset('img/img1.jpg') }}" alt="Imagen 3D" class="img-fluid rounded shadow-lg" max-width="25%">  >
+            <img src="{{ asset('img/img1.jpg') }}" alt="Imagen 3D" class="img-fluid rounded shadow-lg" style="max-width: 37%;">
         </div>
     </div>
 

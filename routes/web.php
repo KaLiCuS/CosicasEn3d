@@ -16,8 +16,8 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/contact', [ContactController::class, 'showForm']);
-Route::post('/contact', [ContactController::class, 'sendEmail'])->name('send.email');
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.send');
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,9 +41,6 @@ Route::get('/inicio', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/contact', [ContactController::class, 'showForm']);
-Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact.send');
-
 Route::get('/quienes-somos', function () {
     return view('quienes-somos');
 })->name('quienes-somos');
@@ -60,4 +57,3 @@ Route::get('blog', function () {
     return view('blog');
 });
 
-Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

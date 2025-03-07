@@ -12,3 +12,5 @@ class ContactFormController extends Controller
         return back()->with('success', 'Thank you for your message!');
     }
 }
+
+?>
