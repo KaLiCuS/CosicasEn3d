@@ -314,16 +314,16 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Nueva sección de botones en el menú -->
                     <li class="nav-item ms-3">
-                        <a href="{{ url('welcome') }}" class="nav-link">INICIO</a>
+                        <a href="{{ route('welcome') }}" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
+                        <a href="{{ route('quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('ubicacion') }}" class="nav-link">UBICACIÓN</a>
+                        <a href="{{ route('ubicacion') }}" class="nav-link">UBICACIÓN</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ url('blog') }}" class="nav-link">BLOG</a>
+                        <a href="{{ route('blog') }}" class="nav-link">BLOG</a>
                     </li>
                     
                     <!-- Redes sociales -->
@@ -412,21 +412,29 @@
     </div>
 
     <!-- Formulario de Contacto -->
-    <form action="{{ route('contact.send') }}" method="POST" class="contact-form">
+    <form action="{{ route('contact.send') }}" method="POST" class="contact-form" name="contact-form" id="contact-form">
         @csrf
         <div id="contacto" class="container contact-form-container">
             <h2>Contacto y sugerencias</h2>
+
+                        <!-- Mostrar mensaje de éxito si existe en la sesión -->
+                        @if(session('success'))
+                        <div class="alert alert-success" style="color: green;">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" required />
+                <input type="text" class="form-control" id="name" name="name" required />
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" required />
+                <input type="email" class="form-control" id="email" name="email" required />
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Mensaje:</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-custom">Enviar</button>
         </div>

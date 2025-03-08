@@ -15,7 +15,7 @@ class ContactController extends Controller
 
     public function sendMail(Request $request)
     {
-        //var_dump($_POST); die();
+        //dd(request()->all()); die();
         // Validar los datos del formulario
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -25,7 +25,7 @@ class ContactController extends Controller
 
         // Enviar el correo
         Mail::to('cosicasen3d@gmail.com')->send(new ContactFormMail($validated['name'], $validated['email'], $validated['message']));
-
+        
         // Redirigir con un mensaje de éxito
         return back()->with('success', 'Tu mensaje ha sido enviado correctamente.');
     }

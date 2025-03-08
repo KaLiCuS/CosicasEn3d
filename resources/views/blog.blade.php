@@ -306,7 +306,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CosicasEn3D</a>
+            <a class="navbar-brand" href="/welcome">CosicasEn3D</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -383,11 +383,10 @@
             <!-- Entrada de Blog 1 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 1">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 1</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 1</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el primer artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -395,11 +394,10 @@
             <!-- Entrada de Blog 2 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 2">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 2</a></h5>
+                        <div class="card-body">
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 2</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el segundo artículo. De nuevo, aquí se puede hablar sobre lo que se verá en el post completo.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -407,11 +405,10 @@
             <!-- Entrada de Blog 3 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 3">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 3</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 3</a></h5>
                         <p class="card-text">Aquí tienes el resumen de un tercer artículo. Puedes poner algo interesante sobre el tema tratado en el blog.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -419,11 +416,10 @@
             <!-- Entrada de Blog 4 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 4">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 4</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 4</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el cuarto artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -431,11 +427,10 @@
             <!-- Entrada de Blog 5 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 5">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 5</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 5</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el quinto artículo. De nuevo, aquí se puede hablar sobre lo que se verá en el post completo.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -443,11 +438,10 @@
             <!-- Entrada de Blog 6 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 6">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 6</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 6</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el sexto artículo. Puedes poner algo interesante sobre el tema tratado en el blog.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -455,11 +449,10 @@
             <!-- Entrada de Blog 7 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 7">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 7</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 7</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el séptimo artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -467,11 +460,10 @@
             <!-- Entrada de Blog 8 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog 8">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 8</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 8</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el octavo artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -479,11 +471,10 @@
             <!-- Entrada de Blog 9 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="/css/img1.jpg" class="card-img-top" alt="Blog 9">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="#" class="text-dark">Título del Blog 9</a></h5>
+                        <h5 class="card-title"><a href="/welcome" class="text-dark">Título del Blog 9</a></h5>
                         <p class="card-text">Resumen breve sobre lo que trata el noveno artículo. Aquí puedes incluir información relevante para captar el interés de los usuarios.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="/welcome" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -492,7 +483,7 @@
 
         <!-- Enlace a la página de todos los blogs -->
         <div class="text-center mt-5">
-            <a href="/todos-los-articulos" class="btn btn-outline-primary">Ver todos los artículos</a>
+            <a href="/welcome" class="btn btn-outline-primary">Ver todos los artículos</a>
         </div>
     </div>
 </div>
