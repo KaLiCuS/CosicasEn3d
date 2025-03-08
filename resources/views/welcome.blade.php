@@ -314,16 +314,16 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Nueva sección de botones en el menú -->
                     <li class="nav-item ms-3">
-                        <a href="{{ route('welcome') }}" class="nav-link">INICIO</a>
+                        <a href="{{ url('welcome') }}" class="nav-link">INICIO</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ route('quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
+                        <a href="{{ url('quienes-somos') }}" class="nav-link">QUIENES SOMOS</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ route('ubicacion') }}" class="nav-link">UBICACIÓN</a>
+                        <a href="{{ url('ubicacion') }}" class="nav-link">UBICACIÓN</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a href="{{ route('blog') }}" class="nav-link">BLOG</a>
+                        <a href="{{ url('blog') }}" class="nav-link">BLOG</a>
                     </li>
                     
                     <!-- Redes sociales -->
