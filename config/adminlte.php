@@ -320,14 +320,17 @@ return [
         ['header' => 'PANEL'],
         [
 
-            'text' => 'Pérfil',
+            'text' => 'Editar Pérfil',
             'url'  => '/profile.edit',
             'icon' => 'fas fa-fw fa-user',
 
+            'text' => 'Pérfil',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Cambiar Contraseña',
-            'url'  => '/admin/settings',
+            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         
