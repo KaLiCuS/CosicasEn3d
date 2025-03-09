@@ -320,70 +320,35 @@ return [
         ['header' => 'PANEL'],
         [
 
-            'text' => 'Editar Pérfil',
-            'url'  => 'profile.edit',
+            'text' => 'Pérfil',
+            'url'  => '/profile.edit',
             'icon' => 'fas fa-fw fa-user',
 
-            'text' => 'Pérfil',
-            'url'  => '',
-            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Cambiar Contraseña',
+            'url'  => '/admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        
+        ['header' => 'Pedido'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Pendiente de Pagar',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
+            'text'       => 'En Preparación',
             'icon_color' => 'red',
             'url'        => '#',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Listo para Enviar',
             'icon_color' => 'yellow',
             'url'        => '#',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Enviado',
+            'icon_color' => 'cyan',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Recibido',
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
