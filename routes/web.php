@@ -37,10 +37,6 @@ Route::get('/inicio', [AdminController::class, 'index'])->name('admin.index');
 
 require __DIR__.'/auth.php';
 
-Route::get('/inicio', function () {
-    return view('contact');
-})->name('contact');
-
 Route::get('/quienes-somos', function () {
     return view('quienes-somos');
 })->name('quienes-somos');
