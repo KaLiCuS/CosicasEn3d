@@ -321,7 +321,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
+            'text' => 'Páginas',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
