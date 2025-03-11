@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'CosicasEn3D',
+    'title' => 'CosicasEn3Dani',
     'title_prefix' => '',
     'title_postfix' => '',
 

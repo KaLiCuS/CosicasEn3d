@@ -53,4 +53,4 @@ Route::get('blog', function () {
 });
 
 require __DIR__.'/auth.php';
-?>
+
