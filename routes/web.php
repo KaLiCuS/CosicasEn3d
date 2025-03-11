@@ -35,7 +35,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/inicio', [AdminController::class, 'index'])->name('admin.index');
 
-require __DIR__.'/auth.php';
 
 Route::get('/quienes-somos', function () {
     return view('quienes-somos');
@@ -53,4 +52,5 @@ Route::get('blog', function () {
     return view('blog');
 });
 
+require __DIR__.'/auth.php';
 ?>

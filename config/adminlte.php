@@ -324,17 +324,9 @@ return [
             'url'  => '/profile.edit',
             'icon' => 'fas fa-fw fa-user',
 
-            'text' => 'Pérfil',
-            'url'  => '',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Cambiar Contraseña',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
         ],
         
-        ['header' => 'Pedido'],
+        ['header' => 'PEDIDO'],
         [
             'text'       => 'En Preparación',
             'icon_color' => 'red',
