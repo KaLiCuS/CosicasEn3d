@@ -321,17 +321,9 @@ return [
         [
 
             'text' => 'Editar Pérfil',
-            'url'  => '/profile.edit',
-            'icon' => 'fas fa-fw fa-user',
+            'route'  => 'profile.edit',
+            'icon' => 'fas fa-cogs',
 
-            'text' => 'Pérfil',
-            'url'  => '',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Cambiar Contraseña',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
         ],
         
         ['header' => 'Pedido'],
@@ -352,7 +344,7 @@ return [
         ],
         [
             'text'       => 'Recibido',
-            'icon_color' => 'cyan',
+            'icon_color' => 'green',
             'url'        => '#',
         ],
     ],
