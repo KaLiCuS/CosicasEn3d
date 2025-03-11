@@ -289,7 +289,7 @@ return [
     |
     */
 
-    'menu' => [
+   'menu' => [
         // Navbar items:
         [
             'type'         => 'navbar-search',
@@ -307,25 +307,23 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'   => 'blog',
+            'route'  => 'admin.blog',
+            'can'    => 'manage-blog',
         ],
         [
-            'text'        => 'Inicio',
-            'route'       => 'admin.index',
-            'icon'        => 'fas fa-home',
+            'text'  => 'Inicio',
+            'route' => 'admin.index',
+            'icon'  => 'fas fa-home',
         ],
 
         ['header' => 'PANEL'],
         [
-
-            'text' => 'Editar Pérfil',
-            'url'  => '/profile.edit',
-            'icon' => 'fas fa-fw fa-user',
-
+            'text'  => 'Editar Pérfil',
+            'route' => 'profile.edit', // Corrección aquí
+            'icon'  => 'fas fa-fw fa-user',
         ],
-        
+
         ['header' => 'PEDIDO'],
         [
             'text'       => 'En Preparación',
@@ -348,7 +346,6 @@ return [
             'url'        => '#',
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
