@@ -319,8 +319,8 @@ return [
 
         ['header' => 'PANEL'],
         [
-            'text'  => 'Editar Pérfil',
-            'route' => 'profile.edit', // Corrección aquí
+            'text'  => 'Editar Perfil',
+            'route' => 'profile.edit',
             'icon'  => 'fas fa-fw fa-user',
         ],
 

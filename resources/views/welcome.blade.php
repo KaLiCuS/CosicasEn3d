@@ -396,7 +396,7 @@
             </div>
         </div>
     </div>
-
+<?php echo phpinfo(); ?>
     <!-- Modal para ampliar la imagen -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
